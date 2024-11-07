@@ -1,11 +1,12 @@
-/* 导航栏基本样式 */
+/* 导航栏样式 */
 header nav {
     display: flex;
-    justify-content: center;  /* 水平居中整个导航栏 */
+    justify-content: center;
     background-color: #333;
     padding: 10px;
 }
 
+/* 导航菜单（在大屏幕下显示） */
 header nav ul {
     list-style: none;
     display: flex;
@@ -14,9 +15,9 @@ header nav ul {
     padding: 0;
 }
 
-/* 导航项样式 */
+/* 导航项 */
 header nav ul li {
-    position: relative;  /* 使下拉菜单相对于li定位 */
+    position: relative;
 }
 
 header nav ul li a {
@@ -26,69 +27,55 @@ header nav ul li a {
     display: block;
 }
 
-header nav ul li a:hover {
-    background-color: #555;
-}
-
-/* 下拉菜单样式 */
+/* 下拉菜单 */
 header nav ul li .dropdown {
     display: none;
     position: absolute;
-    top: 100%;  /* 将下拉菜单放在父项的下方 */
+    top: 100%;
     left: 0;
     background-color: #333;
-    min-width: 180px;  /* 下拉菜单的最小宽度 */
+    min-width: 180px;
     padding: 5px 0;
-    border-radius: 5px;  /* 圆角 */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* 阴影效果 */
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 header nav ul li:hover .dropdown {
-    display: block;  /* 当鼠标悬停时显示下拉菜单 */
-}
-
-header nav ul li .dropdown li {
-    width: 100%;
-    padding: 0;
+    display: block;
 }
 
 header nav ul li .dropdown li a {
-    padding: 10px 15px;
     color: white;
+    padding: 10px 15px;
     display: block;
-    text-align: left;
-    white-space: nowrap;  /* 防止文字换行 */
+    white-space: nowrap;
 }
 
-header nav ul li .dropdown li a:hover {
-    background-color: #555;
-}
-
-/* 响应式设计：小屏幕显示汉堡菜单 */
+/* 响应式设计：小屏幕下隐藏菜单，显示汉堡菜单 */
 .hamburger-menu {
-    display: none;
-    font-size: 24px;
+    display: none;  /* 默认隐藏汉堡菜单 */
+    font-size: 30px;
     color: white;
     cursor: pointer;
     padding: 10px;
 }
 
+/* 在小屏幕下显示汉堡菜单 */
 @media (max-width: 768px) {
     header nav ul {
-        display: none;
+        display: none;  /* 默认隐藏导航菜单 */
         flex-direction: column;
         width: 100%;
         background-color: #333;
         gap: 0;
     }
 
-    /* 显示汉堡菜单按钮 */
+    /* 显示汉堡菜单 */
     .hamburger-menu {
         display: block;
-        text-align: center;
     }
 
-    /* 打开菜单时显示导航项 */
+    /* 当菜单打开时，显示导航项 */
     .menu-opened header nav ul {
         display: flex;
     }
