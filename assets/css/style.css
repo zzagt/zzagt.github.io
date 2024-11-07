@@ -1,15 +1,90 @@
-/* 导航栏样式 */
-nav {
+/* 基本的导航栏样式 */
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
     background-color: #333;
-    padding: 10px;
 }
 
-nav a {
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    display: block;
     color: white;
     text-decoration: none;
-    margin: 0 15px;
+    padding: 15px 20px;
+    text-align: center;
 }
 
-nav a:hover {
-    text-decoration: underline;
+header nav ul li a:hover {
+    background-color: #555;
+}
+
+/* 下拉菜单样式 */
+header nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    top: 100%;
+    z-index: 1;
+}
+
+header nav ul li:hover .dropdown {
+    display: block;
+}
+
+header nav ul li .dropdown li {
+    width: 100%;
+}
+
+header nav ul li .dropdown li a {
+    padding: 12px 20px;
+}
+
+header nav ul li .dropdown li a:hover {
+    background-color: #555;
+}
+
+/* 美化导航栏 */
+header nav {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* --- 响应式设计 --- */
+/* 隐藏导航栏，将其转换为汉堡菜单 */
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+    }
+
+    header nav ul li {
+        width: 100%;
+    }
+
+    /* 让汉堡菜单显示 */
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* 菜单打开时显示导航项 */
+    .menu-opened header nav ul {
+        display: flex;
+    }
 }
