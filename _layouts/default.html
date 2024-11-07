@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                {% for item in site.header %}
+                    <li class="nav-item">
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                        
+                        {% if item.title == "Projects" %}
+                            <ul class="dropdown">
+                                <li><a href="/project1">Project 1</a></li>
+                                <li><a href="/project2">Project 2</a></li>
+                            </ul>
+                        {% elsif item.title == "Services" %}
+                            <ul class="dropdown">
+                                <li><a href="/service1">Service 1</a></li>
+                                <li><a href="/service2">Service 2</a></li>
+                            </ul>
+                        {% elsif item.title == "About" %}
+                            <ul class="dropdown">
+                                <li><a href="/team">Our Team</a></li>
+                                <li><a href="/history">Company History</a></li>
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+</body>
+</html>
