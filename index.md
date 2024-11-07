@@ -1,8 +1,4 @@
 ---
-
-# Welcome to My GitHub Page!
-This is my first GitHub Pages site.
----
 layout: default
 title: Home
 ---
