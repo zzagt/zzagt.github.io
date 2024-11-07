@@ -8,6 +8,9 @@
 </head>
 <body>
     <header>
+        <!-- 汉堡菜单按钮 -->
+        <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        
         <nav>
             <ul>
                 {% for item in site.header %}
@@ -40,5 +43,11 @@
         {{ content }}
     </main>
 
+    <script>
+        // JavaScript：切换导航栏显示
+        function toggleMenu() {
+            document.body.classList.toggle("menu-opened");
+        }
+    </script>
 </body>
 </html>
