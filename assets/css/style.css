@@ -1,21 +1,28 @@
 /* 基本的导航栏样式 */
+header nav {
+    display: flex;
+    justify-content: center;  /* 水平居中 */
+    align-items: center;      /* 垂直居中 */
+    background-color: #333;
+    padding: 10px 0;  /* 调整顶部和底部的内边距 */
+}
+
 header nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    background-color: #333;
+    display: flex;  /* 导航项在一行中排列 */
 }
 
 header nav ul li {
-    position: relative;
+    margin: 0 15px;  /* 每个导航项之间的间距 */
 }
 
 header nav ul li a {
     display: block;
     color: white;
     text-decoration: none;
-    padding: 15px 20px;
+    padding: 10px 15px;
     text-align: center;
 }
 
@@ -49,15 +56,7 @@ header nav ul li .dropdown li a:hover {
     background-color: #555;
 }
 
-/* 美化导航栏 */
-header nav {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-}
-
 /* --- 响应式设计 --- */
-/* 隐藏导航栏，将其转换为汉堡菜单 */
 .hamburger-menu {
     display: none;
     font-size: 30px;
