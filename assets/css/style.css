@@ -1,12 +1,9 @@
-/* 导航栏样式 */
+/* 导航栏的基础样式 */
 header nav {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
+    background-color: #333;  /* 深色背景 */
     padding: 10px;
 }
 
-/* 导航菜单（在大屏幕下显示） */
 header nav ul {
     list-style: none;
     display: flex;
@@ -27,17 +24,15 @@ header nav ul li a {
     display: block;
 }
 
-/* 下拉菜单 */
+/* 下拉菜单样式 */
 header nav ul li .dropdown {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background-color: #333;
-    min-width: 180px;
     padding: 5px 0;
     border-radius: 5px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 header nav ul li:hover .dropdown {
@@ -48,26 +43,27 @@ header nav ul li .dropdown li a {
     color: white;
     padding: 10px 15px;
     display: block;
-    white-space: nowrap;
 }
 
-/* 响应式设计：小屏幕下隐藏菜单，显示汉堡菜单 */
+/* 汉堡菜单样式 */
 .hamburger-menu {
-    display: none;  /* 默认隐藏汉堡菜单 */
+    display: none;
     font-size: 30px;
     color: white;
     cursor: pointer;
     padding: 10px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
 }
 
-/* 在小屏幕下显示汉堡菜单 */
+/* 小屏幕下显示汉堡菜单 */
 @media (max-width: 768px) {
     header nav ul {
         display: none;  /* 默认隐藏导航菜单 */
         flex-direction: column;
         width: 100%;
         background-color: #333;
-        gap: 0;
     }
 
     /* 显示汉堡菜单 */
@@ -75,8 +71,20 @@ header nav ul li .dropdown li a {
         display: block;
     }
 
-    /* 当菜单打开时，显示导航项 */
+    /* 显示菜单项，当 .menu-opened 类添加到 body 时 */
     .menu-opened header nav ul {
         display: flex;
+    }
+
+    /* 菜单项的样式 */
+    .menu-opened header nav ul li {
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* 鼠标悬停时改变汉堡菜单样式 */
+    .hamburger-menu:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.5);
     }
 }
